@@ -1,0 +1,37 @@
+import React, { Component } from 'react';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Platform
+} from 'react-native';
+import Root from './src/main';
+
+export default class MainApp extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+          <Root {...this.props} />
+      </View>
+
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+     paddingTop: (Platform.OS === 'ios') ? 20 : 0,
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});

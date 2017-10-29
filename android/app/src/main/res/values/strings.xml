@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Trixie</string>
+    <string name="facebook_app_id">2007220292899705</string>
+    <string name="fb_login_protocol_scheme">fb2007220292899705</string>
 </resources>

@@ -16,6 +16,10 @@
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD4BCISm4yVI1bPaKmwZ3bM0Fb0MEM4Fzo"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
