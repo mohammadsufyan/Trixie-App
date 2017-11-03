@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchData } from './actions/actions';
+import { getUser } from './actions/actions';
 
 
 const styles = StyleSheet.create({
@@ -23,8 +23,9 @@ export class Main extends Component {
     return(
       <View style={styles.container}>
         <View style={styles.containerView}>
-          <TouchableOpacity onPress={() => this.props.fetchData()}>
-            <Text>{`Hello-World ${this.props.appData.data.feed ? this.props.appData.data.feed.entry.length : 0}`}</Text>
+          <TouchableOpacity onPress={() => this.props.getUser('fb_103')}>
+            <Text>{`Hello-World ${this.props.userData.user.name ? this.props.userData.user.name : ''}`}</Text>
+            {this.props.userData.isFetching && <Text>{'Fetching data'}</Text>}
           </TouchableOpacity>
         </View>
       </View>
@@ -35,13 +36,13 @@ export class Main extends Component {
 
 function mapStateToProps (state) {
   return {
-    appData: state.appData
+    userData: state.userData
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    fetchData: () => dispatch(fetchData())
+    getUser: (facebook_id) => dispatch(getUser(facebook_id)),
   }
 }
 
